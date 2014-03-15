@@ -121,3 +121,6 @@ It has no options:
     sources_en	sources_en_text_unique_idx	53 MB
     targets_en	targets_en_pkey	16 MB
     sources_en	sources_en_pkey	13 MB
+
+
+.. PUT HERE NOTES ON USING CREATEDB SUBCOMMAND.

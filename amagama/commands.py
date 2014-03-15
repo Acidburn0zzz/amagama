@@ -28,6 +28,14 @@ from translate.lang.data import langcode_ire
 from translate.storage import factory
 
 
+class CreateDB(Command):
+    """Create the database if missing."""
+    def run(self):
+        #TODO check if "amagama" DB already exists, if not then just run:
+        # "psql -c "CREATE DATABASE amagama WITH ENCODING 'UTF-8';" -U postgres"
+        pass
+
+
 class InitDB(Command):
     """Create the database tables."""
     option_list = (

@@ -157,6 +157,8 @@ CREATE INDEX targets_%(slang)s_sid_lang_idx ON targets_%(slang)s (sid, lang);
         for row in cursor:
             self.source_langs.add(row['relname'][offset:])
 
+    #TODO add method to create the DB if it doesn't exist yet.
+
     def init_db(self, source_langs):
         cursor = self.get_cursor()
         if not self.function_exists('array_agg'):
