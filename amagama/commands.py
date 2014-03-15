@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import logging
+import logging#TODO make logging log properly. Check how this is done in deployment. Log to files. Or maybe better avoid logging in commands and just print to stdout and stderr with sys.stderr.write()
 import os
 import sys
 

@@ -50,6 +50,8 @@
       $('#js-similar-title').text(MGM.search.searchTitle);
       $('#js-similar-count').text('Found ' + data.length + ' results.');
 
+      //TODO search result URLs should be linkable, please!
+
       if (data.length) {
         var currentResult,
             resultQuality,

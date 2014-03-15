@@ -23,3 +23,6 @@ representation of the *Arabic* translations for the *English* **file** word.
    .. code-block:: bash
 
         $ amagama --help
+
+
+.. TODO list the other options:  :option:`-b`, :option:`--bind`  :option:`-p`, :option:`--port` and :option:`--debug`

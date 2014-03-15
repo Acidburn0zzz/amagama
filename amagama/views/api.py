@@ -42,7 +42,7 @@ def translate_unit_get(slang, tlang):
     This actually internally redirects to the view that handles
     /<slang>/<tlang>/unit/<path:uid> GET requests.
     """
-    return get_uid_and_call(translate_unit, slang, tlang)
+    return get_uid_and_call(translate_unit, slang, tlang)#TODO allows to query  /tmserver/en/es/unit/?source=window  instead of  /tmserver/en/es/unit/window
 
 
 @write_api.route('/<slang>/<tlang>/unit/', methods=('POST', ))
@@ -66,7 +66,7 @@ def add_unit_get(slang, tlang):
 
 
 @read_api.route('/<slang>/<tlang>/unit/<path:uid>', methods=('GET', ))
-def translate_unit(slang, tlang, uid):
+def translate_unit(slang, tlang, uid):#TODO maybe rename this uid to string or whatever.
     """Return the translations for the provided unit."""
     min_similarity = get_int_arg(request, 'min_similarity')
     max_candidates = get_int_arg(request, 'max_candidates')

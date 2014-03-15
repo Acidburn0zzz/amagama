@@ -19,7 +19,7 @@
 
 """Benchmarking commands."""
 
-import logging
+import logging#TODO make logging log properly. Check how this is done in deployment. Log to files.
 import os
 import sys
 

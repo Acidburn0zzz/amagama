@@ -206,6 +206,7 @@ CREATE INDEX targets_%(slang)s_sid_lang_idx ON targets_%(slang)s (sid, lang);
             target_languages = list(target_languages)
             target_languages.sort()
 
+            # TODO Show languages like "be_latin: Biełaruskaja".
             self._available_langs = {
                 'sourceLanguages': source_languages,
                 'targetLanguages': target_languages,
@@ -233,7 +234,7 @@ CREATE INDEX targets_%(slang)s_sid_lang_idx ON targets_%(slang)s (sid, lang);
         raise Exception("sid not found although it should have existed")
 
     def add_unit(self, unit, source_lang, target_lang, commit=True,
-                 cursor=None):
+                 cursor=None):#TODO do not pass the cursor. Instead save it as attribute in the class?
         """Insert unit in the database."""
         #TODO: is that really the best way to handle unspecified source and
         # target languages? what about conflicts between unit attributes and
@@ -244,7 +245,7 @@ CREATE INDEX targets_%(slang)s_sid_lang_idx ON targets_%(slang)s (sid, lang);
 
         try:
             if cursor is None:
-                cursor = self.get_cursor()
+                cursor = self.get_cursor()#TODO we are rolling back below, assuming there is a connection. Does having a connection mean that we need the cursor before? If true get this out of the try.
 
             unitdict = {
                 'source': unicode(unit.source),
