@@ -17,6 +17,8 @@
 
       // Only trigger the search if query terms have been provided.
       if (searchTerms) {
+        $('#js-similar-results').spin();
+
         //TODO look for a way to specify min_similarity and max_candidates on
         // the search box instead of hardcoding them here.
         var minSimilarity = 30,
@@ -76,6 +78,7 @@
           resultsHTML.push('</td></tr>');
         }
 
+        $('#js-similar-results').spin(false);
         $('#js-similar-results').html(resultsHTML.join(''));
         $('#js-similar-table-headers').show();
       } else {
